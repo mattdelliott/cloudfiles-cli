@@ -6,6 +6,7 @@ var args = require('minimist')(process.argv.slice(2)),
     container = args.c || args.container,
     output = args.o || args.output,
     colors = require('colors'),
+    error = null,
     cloudfiles = require('pkgcloud').storage.createClient({
       provider: 'rackspace',
       username: username,
@@ -14,23 +15,20 @@ var args = require('minimist')(process.argv.slice(2)),
     });
 
 if(!username) {
-    return console.log('-u username is required.');
+    error = '-u username is required.';
+} else if(!apiKey) {
+    error = '-k apiKey is required.';
+} else if(!region) {
+    error = '-r region is required.';
+} else if(!file) {
+    error = '-f file is required.';
+} else if(!container) {
+    error = '-c container is required.';
 }
 
-if(!apiKey) {
-    return console.log('-k apiKey is required.');
-}
-
-if(!region) {
-    return console.log('-r region is required.');
-}
-
-if(!file) {
-    return console.log('-f file is required.');
-}
-
-if(!container) {
-    return console.log('-c container is required.');
+if(error) {
+    console.log(error.inverse.red);
+    return process.exit(-1);
 }
 
 module.exports = {

@@ -1,5 +1,5 @@
 {
-  "name": "cf-cli",
+  "name": "cloudfiles-cli",
   "version": "1.0.0",
   "description": "Command-Line Interface for Rackspace Cloud Files.",
   "main": "cli.js",
@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "cf-upload": "./src/upload.js",
-    "cf-download": "./src/download.js"
+    "cloudfiles-upload": "./src/upload.js",
+    "cloudfiles-download": "./src/download.js"
   },
   "keywords": [
     "rackspace",
