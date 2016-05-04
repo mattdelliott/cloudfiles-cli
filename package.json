@@ -1,0 +1,29 @@
+{
+  "name": "cf-cli",
+  "version": "1.0.0",
+  "description": "Command-Line Interface for Rackspace Cloud Files.",
+  "main": "cli.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "cf-upload": "./src/upload.js",
+    "cf-download": "./src/download.js"
+  },
+  "keywords": [
+    "rackspace",
+    "cloudfiles",
+    "cli"
+  ],
+  "preferGlobal": true,
+  "repository": "git@github.com:mattdelliott/cf-cli.git",
+  "author": "Matt Elliott",
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^3.3.5",
+    "colors": "^1.1.2",
+    "minimist": "^1.2.0",
+    "pkgcloud": "^1.3.0",
+    "underscore": "^1.8.3"
+  }
+}
